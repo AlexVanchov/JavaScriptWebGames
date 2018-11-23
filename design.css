@@ -9,7 +9,13 @@ body {
     color: #fefefe;
     font-family: 'fantasy';
 }
-
+.mainH{
+    text-align: center;
+    border: 1px black;
+}
+.howTo{
+    margin-left: 10%;
+}
 canvas, #score {
     position: absolute;
     top: 50%;
@@ -25,6 +31,12 @@ canvas, #score {
     width: 500px;
     height: 800px;
     pointer-events: none;
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5),
+    inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2),
+    0 -10px 15px -1px rgba(0, 0, 0, 0.6),
+    inset 0 3px 4px -1px rgba(0, 0, 0, 0.2),
+    inset 0 0 5px 1px rgba(0, 0, 0, 0.8),
+    inset 0 20px 30px 0 rgba(0, 0, 0, 0.2);
 }
 
 span {
@@ -44,8 +56,8 @@ span {
     margin-top: 50px;
     color: green;
     font-size: 80px;
-    text-shadow: 5px 5px 0 yellow;
-    z-index: -1;
+    text-shadow: 5px 5px 0 #000000;
+    z-index: 1;
 }
 
 .finished {
