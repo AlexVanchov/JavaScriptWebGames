@@ -17,7 +17,7 @@ function draw() {
         lines.push(new Line());
     }
     if(score > 5) {
-        bird.gravity = 6;
+        ball.gravity = 6;
     }
 
     ball.update();
@@ -41,7 +41,7 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === UP_ARROW) {
-        ball.jump();
+    if (mouseIsPressed) {
+        return true;
     }
 }

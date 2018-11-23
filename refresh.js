@@ -23,8 +23,6 @@ function Line() {
         return false;
     }
 
-    // Detect if a bird hits the line or passes in the middle
-
     this.detect = function(ball) {
         if((ball.x == this.x + this.w) && (ball.y > this.top && ball.y < this.bottom)) {
             return 1;
