@@ -1,4 +1,4 @@
-var bird;
+var ball;
 var lines = [];
 
 var score = 0;
@@ -7,7 +7,7 @@ var scoreSpan = scoreDiv.querySelector('span');
 
 function setup() {
     createCanvas(500,800);
-    bird = new Bird();
+    ball = new Ball();
     lines.push(new Line());
 }
 
@@ -20,22 +20,28 @@ function draw() {
         bird.gravity = 6;
     }
 
-    bird.update();
-    bird.show();
+    ball.update();
+    ball.show();
 
     for(var i = lines.length - 1; i >= 0; i--) {
         lines[i].show();
         lines[i].update();
 
-        if(lines[i].detect(bird) === 1) {
+        if(lines[i].detect(ball) === 1) {
             scoreSpan.innerHTML = ++score;
-        } else if(lines[i].detect(bird) === 2) {
+        } else if(lines[i].detect(ball) === 2) {
             scoreDiv.className = "finished";
             theEndSound.play();
             remove();
         }
         if(lines[i].visible()) {
-            lines.splice(i, 1); // [1]
+            lines.splice(i, 1);
         }
+    }
+}
+
+function keyPressed() {
+    if (keyCode === UP_ARROW) {
+        ball.jump();
     }
 }
