@@ -40,7 +40,7 @@ function draw() {
     }
 }
 
-function keyPressed() {
+function mousePressed() {
     if (mouseIsPressed) {
         return true;
     }

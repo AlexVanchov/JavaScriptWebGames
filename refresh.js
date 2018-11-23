@@ -6,7 +6,7 @@ function Line() {
 
     this.x = width;
     this.w = 50;
-    this.speed = 2;
+    this.speed = 0;
 
     this.show = function() {
         fill(255, 255, 0);
@@ -15,6 +15,7 @@ function Line() {
     }
 
     this.update = function() {
+        this.speed = keyPressed();
         this.x -= this.speed;
     }
 
@@ -30,5 +31,10 @@ function Line() {
             return 2;
 
         return 0;
+    }
+}
+function keyPressed() {
+    if (key >= 'a' && key <= 'z') {
+        return 2;
     }
 }

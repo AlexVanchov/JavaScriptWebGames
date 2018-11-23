@@ -9,11 +9,13 @@ function Ball() {
     }
 
     this.update = function() {
-        if (keyPressed() === true) {
+        if (mousePressed() === true) {
             this.y -= 10;
         }
         else{
-            this.y += 5;
+            if (keyPressed() == 2) {
+                this.y += 5;
+            }
         }
 
         if(this.y > height-15) {
