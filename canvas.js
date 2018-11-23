@@ -22,4 +22,20 @@ function draw() {
 
     bird.update();
     bird.show();
+
+    for(var i = lines.length - 1; i >= 0; i--) {
+        lines[i].show();
+        lines[i].update();
+
+        if(lines[i].detect(bird) === 1) {
+            scoreSpan.innerHTML = ++score;
+        } else if(lines[i].detect(bird) === 2) {
+            scoreDiv.className = "finished";
+            theEndSound.play();
+            remove();
+        }
+        if(lines[i].visible()) {
+            lines.splice(i, 1); // [1]
+        }
+    }
 }
